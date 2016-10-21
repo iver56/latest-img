@@ -1,5 +1,4 @@
 <?php
-header("Content-type: image/jpeg");
 
 function getNewestFile($dir)
 {
@@ -27,5 +26,7 @@ function getNewestFile($dir)
 }
 
 $newest_file = getNewestFile('.');
+header("Content-type: image/jpeg");
+header('Content-Disposition: filename="image.jpg"');
 
 readfile($newest_file);
